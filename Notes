@@ -1,0 +1,13 @@
+how to tell computer to run code as ruby?
+
+Version control
+Tools used to manage code changes
+Best practice. Always use whether alone or in team.
+Git : https://git-scm.com/
+http://gitimmersion.com/
+git add . #adds everything it sees in the folder to staging area
+git status #shows status of folders/files
+git commit -m"Initial commit"   #commit items to respository with comment " "
+git diff #shows changes made
+git log #history of changes
+git push #pushes repository to github

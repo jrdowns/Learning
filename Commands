@@ -1,0 +1,26 @@
+puts - put string. gets string version of everything
+.to_s - convert to string
+.to_i - convert to integer
+.to_f - convert to float
+gets - get string. gets string input from keyboard
+.chomp - elminiates Enter characters from strings e.g. gets.chomp
+.reverse - returns reverse of string
+.length - returns lenght of string e.g. name.length.to_s
+.upcase - changes string to uppercase
+.downcase - changes string to lowercase
+.swapcase - switches case
+.capitalize - capitalizes first character
+.center - center aligns output e.g. "old mother".center(line width)
+.ljust - left justifies
+.rjust - right justifies
+** - exponential
+% - modulus. gives remainder
+.abs - gives absolute value
+rand - random number generator.
+\ - escape character
+" " - allows interpolations
+# - comment
+|| - or character. e.g. if name = "Chris" || name = "Kathy"
+&& - and
+! - not
+recursion - not a command. Is a method calling itself.
