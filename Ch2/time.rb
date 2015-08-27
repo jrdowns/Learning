@@ -9,4 +9,4 @@ minutes_decade = hours_year * 10 * 60
 puts "#{minutes_decade} minutes in a decade."
 
 age_seconds = hours_year * 27 * 60 * 60
-puts "I am #{age_seconds} old."
+puts "I am #{age_seconds} seconds old."
