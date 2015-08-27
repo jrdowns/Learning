@@ -11,4 +11,4 @@ git commit -m"Initial commit"   #commit items to respository with comment " "
 git diff #shows changes made
 git log #history of changes
 git push #pushes repository to github
-test
+
