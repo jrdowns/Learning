@@ -10,12 +10,11 @@ contents = ["Table of Contents", "Chapter 1:  Getting Started", "page 1", "Chapt
 
 puts contents[0].center(line_width)
 
+puts " "
+
 puts contents[1].ljust(line_width/2) + contents[2].rjust(line_width/2)
 puts contents[3].ljust(line_width/2) + contents[4].rjust(line_width/2)
 puts contents[5].ljust(line_width/2) + contents[6].rjust(line_width/2)
 
-=begin
-book uses the following:
-puts(contents[1].ljust(line_width/2))
-The the second set of ()? Seems to work without.  
-=end
+# Should make code more dynamic so that additions to contents array
+# will add and justify without additional coding.
