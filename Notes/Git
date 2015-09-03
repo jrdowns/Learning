@@ -9,6 +9,59 @@ git add . #adds everything it sees in the folder to staging area
 git status #shows status of folders/files
 git commit -m"Initial commit"   #commit items to respository with comment " "
 git diff #shows changes made
-git log #history of changes
+git log --pretty=oneline #history of changes
+git log --pretty=oneline --max-count=2
+git log --pretty=oneline --since='5 minutes ago'
+git log --pretty=oneline --until='5 minutes ago'
+git log --pretty=oneline --author=<your name>
+git log --pretty=oneline --all
+git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 git push #pushes repository to github
+git checkout <hash>
+cat <file name>
+git tag v1 - can refer to current version of program as v1
+git checkout v1^ - checksout previous version of current version
+git tag v1-beta - tags previous version
+git tag - view tags
+git hist master --all - shows tags in log
+git reset HEAD <file name> - resets staging area to be whatever is in HEAD.
+git revert HEAD - reverts commit
+git reset --hard v1 - resets to specified version
+git tag -d <tag> - removes tag
+git commit --amend -m"<comment>" - amends previous commit
+mkdir lib - make lib directory
+git mv <file name> lib - moves specified file to lib directory
+
+#Add RAKE file-
+task :default => :run
+
+task :run do
+  require './lib/hello'
+end
+#run rake file-
+rake
+
+ls -C .git - shows git directory
+ls -C .git/objects - shows object store
+git hist --max-count=1 - latest commit
+git cat-file -t <hash>
+git cat-file -p <hash>
+
+git checkout -b greet - create branch "greet"
+
+# Merge branches
+git checkout greet
+git merge master
+#
+
+rebase - like merge. rewrites commit history
+git clone hello cloned_hello - creates clone of repository
+git remote
+git remote show origin
+git branch - look at branches
+git branch -a - list remote branches
+git fetch - fetch new commits from repository, but does not merge into local branch
+git merge origin/master - merge fetched changes into local master
+git pull - equivalent to git pull + git merge origin/master. fetches commits from remote and merges with local master
+git branch --track greet origin/greet - local branch track remote branch
 
