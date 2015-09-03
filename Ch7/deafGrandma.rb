@@ -15,8 +15,8 @@ while true
     end
     # Generate random number. Range:1900 - 2014
     #year = rand(115) + 1900 # rand(max) exclusive of max
-    #year = rand(1900..2014) # rand(A..B) inclusive
-    year = rand(1900...2015) # rand(A...B) exclusive of B
+    #year = rand(1930..1950) # rand(A..B) inclusive
+    year = rand(1930...1951) # rand(A...B) exclusive of B
     puts "NO, NOT SINCE #{year}."
   # If answer isn't all caps
   else
