@@ -15,7 +15,7 @@ while true
   word_list.push word
 end
 
-puts "Here are the words you entered sorta alphabetically:"
+puts "Here are the words you entered sorted alphabetically:"
 # .sort, by default, sorts alphabetically, but can sort in other ways.
 puts word_list.sort
 

@@ -36,6 +36,7 @@ each - an iterator. allows you to do something to each object an array points to
 		 end
 .join - calls .to_s on indiviual elements of array and adds the string you provide in between those.
 .push - adds an object to the end of your array.
+<< - same as push
 .pop - removes the last object from the array
 .last - tells you what's at the end of the array, but doesn't modify array.
 %q - quote delimeter. e.g. sarcasm_quote = %q{ Brad said, "I really 'like' creating change orders."}

@@ -7,23 +7,34 @@ table of contents.
 =end
 
 title_name = ["Table of Contents"]
-chap_num = ["1","2","3"]
+chap_num = ["1","22","3333"]
 chap_name = ["Getting Started", "Numbers", "Letters"]
-page_num = ["1", "9", "13"]
+page_num = ["1", "99", "133"]
 line_start = "Chapter"
 page = "page"
+
+# Test to make sure chap_num, chap_name, and page_num fit parameters.
+chap_num.each_with_index do |chapter, n|
+  if chap_num[n].length > 4
+    puts "Your chapter number exceeds the 4 character maximum. Formatting may be disrupted."
+  end
+  if chap_name[n].length > 30
+    puts "Your chapter name exceeds the 30 character maximum. Formatting may be disrupted."
+  end
+  if page_num[n].length > 4
+    puts "Your page number exceeds the 4 character maximum. Formatting may be disrupted."
+  end
+end
+
 # Get line length to center title
-# line_length = line_start.length + page.length + 35
-line_width = 55
+line_width = line_start.length + page.length + 43
 
 # OUTPUT
 puts title_name[0].center(line_width)
 
 puts " "
 
-chap_num.each_with_index do |chapter, x|
-  first_half = line_start + " " + chap_num[x] + ": " + chap_name[x]
-  second_half = page + " " + page_num[x]
-
-  puts first_half.ljust(line_width/2) + second_half.rjust(line_width/2)
+chap_num.each_with_index do |chapter, x|  
+  puts line_start.ljust(line_start.length) + " " + chap_num[x].rjust(4) + ": " + chap_name[x].ljust(30) + 
+       " " + page.rjust(page.length) + " " + page_num[x].rjust(4)
 end

@@ -65,3 +65,4 @@ git merge origin/master - merge fetched changes into local master
 git pull - equivalent to git pull + git merge origin/master. fetches commits from remote and merges with local master
 git branch --track greet origin/greet - local branch track remote branch
 
+git clone <url> <name> - clones repository are specified URL with whatever name you give it.
