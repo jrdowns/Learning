@@ -15,6 +15,12 @@ gets - get string. gets string input from keyboard
 .rjust - right justifies
 ** - exponential
 % - modulus. gives remainder
+    You can calculate x%y as follows: First you calculate x/y (cutting off
+    everything after the decimal point). Then you take this number and
+    substract it from x.
+    For example: 421/100==4  4*100==400 421%100==421-400==21
+    If y>x then x/y==0, so x%y==x.
+    2%1000 = 2
 .abs - gives absolute value
 rand - random number generator.
 \ - escape character
@@ -44,3 +50,6 @@ each - an iterator. allows you to do something to each object an array points to
 ? - returns boolean value
 .downto() - loop. counts down to specified value
 .upto() - loop. counts up to a specified value
+local variables - live inside methods and cannot leave.
+method returns last expression evaluated unless return is explicitly called
+returns - explicitly tells method what to return
