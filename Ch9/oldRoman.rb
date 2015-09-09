@@ -7,13 +7,14 @@ I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000
 =end
 
 def prompt
-puts "Please enter an integer between 1 and 3000"
-integer = gets.to_i
+  puts "Please enter an integer between 1 and 3000"
+  integer = gets.to_i
   if integer < 1 || integer > 3000
-   puts "The number you entered does not fit within the range."
-   prompt
+    puts "The number you entered does not fit within the range."
+    prompt
+  else  
+    return integer
   end
-return integer
 end
 
 def convert_to_roman num
