@@ -10,16 +10,16 @@ while true
   reply = gets.chomp.downcase
   if (reply == 'yes' || reply == 'no')
     if reply == 'yes'
-      answer = true
+      return true
     else
-      answer = false
+      return false
     end
     break
   else
     puts 'Please answer "yes" or "no".'
     end
   end
-  answer # This is what we return (true or false).
+  #answer # This is what we return (true or false).
 end
 puts 'Hello, and thank you for...'
 puts
