@@ -19,7 +19,6 @@ while true
     puts 'Please answer "yes" or "no".'
     end
   end
-  #answer # This is what we return (true or false).
 end
 puts 'Hello, and thank you for...'
 puts
