@@ -26,7 +26,7 @@ def convert_to_roman num
   v = "V" * (num % 10 / 5)
   i = "I" * (num % 5 / 1)
   roman = m + d + c + l + x + v + i
-  return roman
+  # return roman
 end
 
 puts convert_to_roman(prompt)
