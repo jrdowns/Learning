@@ -14,13 +14,23 @@ gets - get string. gets string input from keyboard
 .ljust - left justifies
 .rjust - right justifies
 ** - exponential
+
 % - modulus. gives remainder
-    You can calculate x%y as follows: First you calculate x/y (cutting off
-    everything after the decimal point). Then you take this number and
-    substract it from x.
-    For example: 421/100==4  4*100==400 421%100==421-400==21
-    If y>x then x/y==0, so x%y==x.
-    2%1000 = 2
+    Hint: If B > A, then A % B == A
+    How A % B is calculated:
+    First, calculate A/B and cut off everything after the decimal point.
+      For example, 2(A)/1000(B) = 0. 
+                   20(A)/10(B)= 2
+    Next, multiply that answer by B.
+      For example, 0 x 1000(B) = 0. 
+                   2 x 10(B) = 20
+    Finally, subtract that answer from A.
+      For example, 2(A) – 0 = 2. 
+                   20(A) – 20 = 0
+
+2 % 1000 = 2. 
+20 % 10 = 0
+
 .abs - gives absolute value
 rand - random number generator.
 \ - escape character
