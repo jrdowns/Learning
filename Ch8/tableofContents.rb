@@ -7,9 +7,9 @@ table of contents.
 =end
 
 title_name = ["Table of Contents"]
-chap_num = ["1","22","3333"]
+chap_num = ["11","222","3333"]
 chap_name = ["Getting Started", "Numbers", "Letters"]
-page_num = ["1", "99", "133"]
+page_num = ["11", "999", "133"]
 line_start = "Chapter"
 page = "page"
 
