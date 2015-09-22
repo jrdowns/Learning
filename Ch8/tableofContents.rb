@@ -35,6 +35,9 @@ puts title_name[0].center(line_width)
 puts " "
 
 chap_num.each_with_index do |chapter, x|  
-  puts line_start.ljust(line_start.length) + " " + chap_num[x].rjust(4) + ": " + chap_name[x].ljust(30) + 
-       " " + page.rjust(page.length) + " " + page_num[x].rjust(4)
+  puts line_start.ljust(line_start.length) + " " + 
+       chap_num[x].rjust(4) + ": " + 
+       chap_name[x].ljust(30) + " " + 
+       page.rjust(page.length) + " " + 
+       page_num[x].rjust(4)
 end
