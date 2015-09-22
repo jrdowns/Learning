@@ -2,7 +2,7 @@
 # End when you press Enter on an empty line.
 # Repeats words back in alphabetical order.
 # use .sort method
-puts "Type as many words as you'd like:"
+puts "Type as many words as you'd like. Enter a blank line to exit:"
 word_list = []
 
 while true
@@ -16,7 +16,7 @@ while true
 end
 
 puts "Here are the words you entered sorted alphabetically:"
-# .sort, by default, sorts alphabetically, but can sort in other ways.
+
 puts word_list.sort
 
 =begin
