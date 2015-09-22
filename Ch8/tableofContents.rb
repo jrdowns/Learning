@@ -16,13 +16,16 @@ page = "page"
 # Test to make sure chap_num, chap_name, and page_num fit parameters.
 chap_num.each_with_index do |chapter, n|
   if chap_num[n].length > 4
-    puts "Your chapter number exceeds the 4 character maximum. Formatting may be disrupted."
+    puts "Your chapter number exceeds the 4 character maximum. 
+         Formatting may be disrupted."
   end
   if chap_name[n].length > 30
-    puts "Your chapter name exceeds the 30 character maximum. Formatting may be disrupted."
+    puts "Your chapter name exceeds the 30 character maximum. 
+         Formatting may be disrupted."
   end
   if page_num[n].length > 4
-    puts "Your page number exceeds the 4 character maximum. Formatting may be disrupted."
+    puts "Your page number exceeds the 4 character maximum. 
+         Formatting may be disrupted."
   end
 end
 
