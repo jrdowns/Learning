@@ -18,6 +18,8 @@ end
 puts "Here are the words you entered sorted alphabetically:"
 
 puts word_list.sort
+# word_list.sort! would actually modify the stored version of word_list
+# instead of just printing out a sorted version
 
 =begin
 Alternative method:
