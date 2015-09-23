@@ -43,5 +43,5 @@ end
 puts "Here is the list using .sort:"
 puts word_list.sort
 
-puts "here is the list using your program:"
+puts "Here is the list using your program:"
 puts sorting word_list
