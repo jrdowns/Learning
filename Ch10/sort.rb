@@ -11,7 +11,6 @@ while true
     break
   end
   
-  # Pushes input (word) into array (word_list).
   word_list.push word
 end
 
@@ -20,12 +19,11 @@ def sorting some_array
 end
 
 def recursive_sort unsorted_array, sorted_array
-  #compare word A to all words in unsorted_array
   if unsorted_array.length <= 0
     return sorted_array
   end
-  smallest = unsorted_array.pop
   
+  smallest = unsorted_array.pop
   still_unsorted = []
   
   unsorted_array.each do |x|
@@ -36,9 +34,10 @@ def recursive_sort unsorted_array, sorted_array
       still_unsorted.push x
     end
   end
-    sorted_array.push smallest
+  
+  sorted_array.push smallest
     
-    recursive_sort still_unsorted, sorted_array
+  recursive_sort still_unsorted, sorted_array
 end
 
 puts "Here is the list using .sort:"
