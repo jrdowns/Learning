@@ -25,18 +25,22 @@ def convert_to_roman num
   c_num = (num % 1000 / 100)
   if c_num == 9
     c = "CM"
+  elsif c_num > 5 && c_num < 9
+    c = "D" + "C" * (c_num - 5)
   elsif c_num == 5
     c = "D"
   elsif c_num == 4
     c = "CD"
   else
-    c = "C" * c_num   
+    c = "C" * c_num
   end
   
   # 10 - 90
   x_num = (num % 100 / 10)
   if x_num == 9
     x = "XC"
+  elsif x_num > 5 && x_num < 9
+    x = "L" + "X" * (x_num - 5)
   elsif x_num == 5
     x = "L"
   elsif x_num == 4
@@ -49,6 +53,8 @@ def convert_to_roman num
   i_num = (num % 10 / 1)
   if i_num == 9
     i = "IX"
+  elsif i_num > 5 && i_num < 9
+    i = "V" + "I" * (i_num - 5)
   elsif i_num == 5
     i = "V"
   elsif i_num == 4
@@ -57,7 +63,7 @@ def convert_to_roman num
     i = "I" * i_num
   end
   
-  roman = m + c + x + i
+  roman = m.to_s + c.to_s + x.to_s + i.to_s
   
   # test using to_roman GEM
   puts "Here is the result using the to_roman GEM: " + num.to_roman
