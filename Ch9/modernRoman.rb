@@ -60,7 +60,7 @@ def convert_to_roman num
   roman = m + c + x + i
   
   # test using to_roman GEM
-  puts "The result should be: " + num.to_roman
+  puts "Here is the result using the to_roman GEM: " + num.to_roman
   
   return roman
 end
