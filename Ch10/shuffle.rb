@@ -27,11 +27,11 @@ def shuffle unshuffled
     index = 0
     new_arr = []
     
-    unshuffled.each do |item|
+    unshuffled.each do |x|
       if index == rand_element
-        shuffled.push item
+        shuffled.push x
       else
-        new_arr.push item
+        new_arr.push x
       end
       index = index + 1
     end
