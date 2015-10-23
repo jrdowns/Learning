@@ -43,8 +43,5 @@ def recursive_sort unsorted_array, sorted_array
   recursive_sort still_unsorted, sorted_array
 end
 
-puts "Here is the list using .sort:"
-puts word_list.sort
-
-puts "Here is the list using your program:"
+puts "Here is the list sorted:"
 puts sorting word_list
