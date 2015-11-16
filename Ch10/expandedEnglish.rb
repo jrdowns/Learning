@@ -56,7 +56,7 @@ def english_number number
     left = left - write * zil_base
     
     if write > 0
-      prefix = english_number write
+      prefix = english_number(write)
       num_string = num_string + prefix + " " + zil_name
       
       if left > 0
