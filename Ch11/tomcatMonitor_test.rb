@@ -40,16 +40,16 @@ requests_errored = 0
 while true
   servers.each do |current|
     begin
+      puts current[0]
       response = ""
       http = Net::HTTP.new(current[0], current[1])
       time = Benchmark.realtime do
         response = http.get('/welcome.htm')
       end
       requests_received += 1
-      #puts "Response code: #{response.code}"
-      puts current[0] +
-           " message: #{response.message}" +
-           " time: #{(time*1000).to_i}ms"
+      puts "  Response code:#{response.code}" +
+           " message:#{response.message}" +
+           " time:#{(time*1000).to_i}ms"
       #puts http
     rescue => err
       requests_errored += 1
