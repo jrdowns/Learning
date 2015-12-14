@@ -1,1 +1,6 @@
 Unit Testing
+The lib directory will contain the source code that solves the problem. The bin
+directory should contain the code that 'runs' your code. Often this is a simple
+command line shell that then invokes the code you have created in the lib 
+directory. The test directory will contain the unit tests that will exercise
+and verify the code you created in lib.

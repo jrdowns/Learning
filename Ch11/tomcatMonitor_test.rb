@@ -4,7 +4,7 @@ via http request. It will repeat the requests every # seconds until manually
 terminated. 
 
 Enhancements to make:
- - benchmark the response time of your http call to determine the server response time
+ - benchmark response time of your http call to determine server response time
  - loop through the entire set of production JVM nodes from the list AJ provided
  - make your monitoring program ‘bulletproof’ by handling networking errors such
    as timeouts and disconnects so your program keeps running instead of 
@@ -35,22 +35,21 @@ servers = [["dfwintas1prd",31151],
 requests_sent = servers.length
 requests_received = 0
 requests_errored = 0
+response = ""
 
 
 while true
   servers.each do |current|
     begin
       puts current[0]
-      response = ""
       http = Net::HTTP.new(current[0], current[1])
       time = Benchmark.realtime do
-        response = http.get('/welcome.htm')
-      end
+               response = http.get('/welcome.htm')
+             end
       requests_received += 1
       puts "  Response code:#{response.code}" +
            " message:#{response.message}" +
            " time:#{(time*1000).to_i}ms"
-      #puts http
     rescue => err
       requests_errored += 1
       puts "Error: #{err}"

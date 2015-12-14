@@ -1,0 +1,22 @@
+Networking: A form of I/O
+
+Ports:
+80  - HTTP
+443 - HTTPs
+22 - FTP
+
+Customer -> Browser -> Load Balancer -> Apache -> Tomcat App Servers -> Database
+
+Monitor each of the 16 Tomcat JVMs. 
+Just doing HTTP request.
+1. Track time request takes. Use benchmarking
+2. Never crash. Intelligently process errors. Run scripts. Disconnect from
+    network. How does program respond? Should handle it. Plug back in, script
+    should pick back up.
+
+Store server info. loops through each one indefinitely.
+Runs -> sleeps for 5 seconds -> runs again
+
+
+
+search ruby docs for net::http
