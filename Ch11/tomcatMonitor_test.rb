@@ -64,5 +64,5 @@ while true
   puts "------------------------------------------"
   requests_received = 0
   requests_errored = 0
-  sleep 7
+  sleep 5
 end
