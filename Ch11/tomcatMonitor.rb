@@ -53,7 +53,7 @@ while true
     rescue => err
       requests_errored += 1
       puts "Error: #{err}"
-      next
+      next # This doesn't actually appear to be necessary.
     end
   end
 
