@@ -4,11 +4,7 @@ year = ask "What year(xxxx) were you born?"
 month = ask "What month(xx) were you born?"
 date = ask "What date(xx) were you born?"
 
-birth_day = Time.local(year,month,date)
-curr_day = Time.new
-
-age_seconds = curr_day - birth_day
-age_years = (((age_seconds / 60) / 60) / 24) / 365
+age_years = (Time.new - Time.local(year,month,date)) / 31557600
 
 puts "You are #{age_years.to_i} years old!"
 
