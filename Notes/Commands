@@ -54,6 +54,7 @@ each - an iterator. allows you to do something to each object an array points to
 .push - adds an object to the end of your array.
 << - same as push
 .pop - removes the last object from the array
+.shift - removes the first object from array
 .last - tells you what's at the end of the array, but doesn't modify array.
 %q - quote delimeter. e.g. sarcasm_quote = %q{ Brad said, "I really 'like' creating change orders."}
 .each_with_index - e.g. chapternums.each_with_index do | chapter, x |
@@ -63,3 +64,5 @@ each - an iterator. allows you to do something to each object an array points to
 local variables - live inside methods and cannot leave.
 method returns last expression evaluated unless return is explicitly called
 returns - explicitly tells method what to return
+redo - restarts current iteration
+raise - (without argument) raises runtime exception and program dies.
