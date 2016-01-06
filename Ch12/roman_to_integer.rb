@@ -28,7 +28,7 @@ end
 def convert_to_num(roman_num)
   roman_length = roman_num.length
   roman_array = []
-  switch = 0
+  skip_next = 0
   total_num = 0
   num_array = []
 
@@ -54,14 +54,14 @@ def convert_to_num(roman_num)
 
   num_array.each_with_index do |n, x|
     num_length = num_array.length
-    if switch == 1
-      switch = 0
+    if skip_next == 1
+      skip_next = 0
       next
     elsif x < (num_length-1)
       n2 = num_array[x+1]
       if n < n2
         total_num += n2 - n
-        switch = 1
+        skip_next = 1
       else
         total_num += n
       end
