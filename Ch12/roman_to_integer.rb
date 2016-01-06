@@ -1,19 +1,28 @@
 def prompt
   puts "Enter a Roman numeral:"
   roman_num = gets.downcase.chomp
-  check(roman_num)
+
+  if check(roman_num) == "failed"
+    prompt
+  else
+    return roman_num
+  end
 end
 
 def check(roman_num)
+  test = ""
   letter_array = ["i","v","x","l","c","d","m"]
   roman_num.each_char do |char|
     if letter_array.include?(char) == false
       puts "That is not a valid Roman numeral."
-      prompt
+      test = "failed"
+      return test
+    else
+      test = "passed"
     end
   end
-
-  convert_to_num(roman_num)
+  
+  return test
 end
 
 def convert_to_num(roman_num)
@@ -63,4 +72,4 @@ def convert_to_num(roman_num)
   return total_num.to_s
 end
 
-puts "Your Roman numeral converted to an integer is: #{prompt}"
+puts "Your Roman numeral converted to an integer is: #{convert_to_num(prompt)}"
