@@ -5,6 +5,7 @@ class Dragon
     @asleep = false
     @stuff_in_belly = 10 # He's full
     @stuff_in_intestine = 0 # He doesn't need to go
+    @happiness = 5 # low of 0. high of 10
 
     puts "#{@name} is born."
   end
@@ -70,6 +71,10 @@ class Dragon
     @stuff_in_intestine >= 8
   end
 
+  def angry?
+    @happiness <= 2
+  end
+
   def passage_of_time
     if @stuff_in_belly > 0
       # Move food from belly to intestine.
@@ -81,10 +86,11 @@ class Dragon
         puts "He wake up suddenly!"
       end
       puts "#{@name} is starving! In desperation, he ate YOU!"
-      exit # This quites the programs.
+      exit # This quits the program.
     end
     if @stuff_in_intestine >= 10
       @stuff_in_intestine = 0
+      @happiness -= 2
       puts "Whoops! #{@name} had an accident..."
     end
     if hungry?
@@ -92,6 +98,7 @@ class Dragon
         @asleep = false
         puts "He wakes up suddenly!"
       end
+      @happiness -= 1
       puts "#{@name}'s stomach grumbles..."
     end
     if poopy?
@@ -99,7 +106,17 @@ class Dragon
         @asleep = false
         puts "He wakes up suddenly!"
       end
+      @happiness -= 1
       puts "#{@name} does the potty dance..."
+    end
+    if angry?
+      if @happiness > 1
+        puts "#{@name} has become angry!"
+        puts "Play with #{@name} to calm them."
+      else
+        puts "#{@name} has become ENRAGED! In anger, he kills YOU!"
+        exit # This quits the program.
+      end
     end
   end
 end
