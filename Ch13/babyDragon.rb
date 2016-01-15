@@ -8,19 +8,20 @@ class Dragon
 
     puts "#{@name} is born."
   end
-
+  # hunger goes down/satiation goes up
   def feed
     puts "You feed #{@name}."
     @stuff_in_belly = 10
     passage_of_time
   end
-
+  # poopy goes down
   def walk
     puts "You walk #{@name}."
     @stuff_in_intestine = 0
     passage_of_time
   end
-
+  # Method provides no benefit. Maybe make a happiness/restfull variable go up?
+  # What happens if he becomes too unhappy?
   def put_to_bed
     puts "You put #{@name} to bed."
     @asleep = true
@@ -37,13 +38,14 @@ class Dragon
       end
     end
   end
-
+  # Method provides no benefit. Maybe make a happiness variable go up?
   def toss
     puts "You toss #{@name} up into the air."
     puts "He giggles, which singes your eyebrows."
     passage_of_time
   end
 
+  # Method provides no benefit. Maybe make a happiness/restfull variable go up?
   def rock
     puts "You rock #{@name} gently."
     @asleep = true
