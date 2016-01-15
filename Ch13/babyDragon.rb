@@ -5,7 +5,7 @@ class Dragon
     @asleep = false
     @stuff_in_belly = 10 # He's full
     @stuff_in_intestine = 0 # He doesn't need to go
-    @happiness = 5 # low of 0. high of 10
+    @happiness = 5
 
     puts "#{@name} is born."
   end
@@ -19,6 +19,12 @@ class Dragon
   def walk
     puts "You walk #{@name}."
     @stuff_in_intestine = 0
+    passage_of_time
+  end
+
+  def play
+    puts "You play with #{@name}."
+    @happiness += 3
     passage_of_time
   end
   # Method provides no benefit. Maybe make a happiness/restfull variable go up?
@@ -38,11 +44,13 @@ class Dragon
         puts "#{@name} wakes up slowly."
       end
     end
+    @happiness += 1
   end
   # Method provides no benefit. Maybe make a happiness variable go up?
   def toss
     puts "You toss #{@name} up into the air."
     puts "He giggles, which singes your eyebrows."
+    @happiness += 1
     passage_of_time
   end
 
@@ -110,7 +118,7 @@ class Dragon
       puts "#{@name} does the potty dance..."
     end
     if angry?
-      if @happiness > 1
+      if @happiness > 0
         puts "#{@name} has become angry!"
         puts "Play with #{@name} to calm them."
       else
