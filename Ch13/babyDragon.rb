@@ -8,24 +8,53 @@ class Dragon
     @happiness = 5
 
     puts "#{@name} is born."
+    command
+  end
+
+  def command
+    action_List = ["feed", "walk", "play", "put to bed", "toss", "rock"]
+    puts "What would you like to do with your dragon?"
+    puts "Enter a command: feed, walk, play, put to bed, toss, or rock"
+    action = gets.downcase.chomp
+    if action_List.include?(action)
+      if action == "feed"
+        feed
+      elsif action == "walk"
+        walk
+      elsif action == "play"
+        play
+      elsif action == "put to bed"
+        put_to_bed
+      elsif action == "toss"
+        toss
+      elsif action == "rock"
+        rock
+      end
+    else
+      puts "OOPS! That is not a valid command!"
+      command
+    end
   end
   # hunger goes down/satiation goes up
   def feed
     puts "You feed #{@name}."
     @stuff_in_belly = 10
     passage_of_time
+    command
   end
   # poopy goes down
   def walk
     puts "You walk #{@name}."
     @stuff_in_intestine = 0
     passage_of_time
+    command
   end
 
   def play
     puts "You play with #{@name}."
     @happiness += 3
     passage_of_time
+    command
   end
   # Method provides no benefit. Maybe make a happiness/restfull variable go up?
   # What happens if he becomes too unhappy?
@@ -45,6 +74,7 @@ class Dragon
       end
     end
     @happiness += 1
+    command
   end
   # Method provides no benefit. Maybe make a happiness variable go up?
   def toss
@@ -52,6 +82,7 @@ class Dragon
     puts "He giggles, which singes your eyebrows."
     @happiness += 1
     passage_of_time
+    command
   end
 
   # Method provides no benefit. Maybe make a happiness/restfull variable go up?
@@ -64,6 +95,7 @@ class Dragon
       @asleep = false
       puts "...but wakes when you stop."
     end
+    command
   end
 
   private
@@ -87,7 +119,7 @@ class Dragon
     if @stuff_in_belly > 0
       # Move food from belly to intestine.
       @stuff_in_belly = @stuff_in_belly - 1
-      @stuff_in_intestine = @stuff_in_intestine + 1
+      @stuff_in_intestine = @stuff_in_intestine + 2
     else # Our dragon is starving!
       if @asleep
         @asleep = false
@@ -119,8 +151,7 @@ class Dragon
     end
     if angry?
       if @happiness > 0
-        puts "#{@name} has become angry!"
-        puts "Play with #{@name} to calm them."
+        puts "#{@name} growls at you!"
       else
         puts "#{@name} has become ENRAGED! In anger, he kills YOU!"
         exit # This quits the program.
@@ -129,4 +160,10 @@ class Dragon
   end
 end
 
-pets = Dragon.new "Norbert"
+def prompt
+  puts "What would you like to name your dragon?"
+  name = gets.capitalize.chomp
+  pets = Dragon.new "#{name}"
+end
+
+prompt
