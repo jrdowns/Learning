@@ -74,7 +74,6 @@ class Dragon
         puts "#{@name} wakes up slowly."
       end
     end
-    @happiness += 1
     command
   end
 
@@ -123,14 +122,14 @@ class Dragon
     else # Our dragon is starving!
       if @asleep
         @asleep = false
-        puts "He wake up suddenly!"
+        puts "He wakes up suddenly!"
       end
       puts "#{@name} is starving! In desperation, he ate YOU!"
       exit # This quits the program.
     end
     if @stuff_in_intestine >= 10
       @stuff_in_intestine = 0
-      @happiness -= 2
+      @happiness -= 3
       puts "Whoops! #{@name} had an accident..."
     end
     if hungry?
