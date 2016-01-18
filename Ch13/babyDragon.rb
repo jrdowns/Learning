@@ -7,15 +7,17 @@ class Dragon
     @stuff_in_intestine = 0 # He doesn't need to go
     @happiness = 5
 
-    puts "#{@name} is born."
+    puts "Your very own dragon, #{@name}, is born!"
     command
   end
 
   def command
     action_List = ["feed", "walk", "play", "put to bed", "toss", "rock"]
+    puts "\n"
     puts "What would you like to do with your dragon?"
     puts "Enter a command: feed, walk, play, put to bed, toss, or rock"
     action = gets.downcase.chomp
+    puts "\n"
     if action_List.include?(action)
       if action == "feed"
         feed
@@ -35,14 +37,14 @@ class Dragon
       command
     end
   end
-  # hunger goes down/satiation goes up
+
   def feed
     puts "You feed #{@name}."
     @stuff_in_belly = 10
     passage_of_time
     command
   end
-  # poopy goes down
+
   def walk
     puts "You walk #{@name}."
     @stuff_in_intestine = 0
@@ -56,8 +58,7 @@ class Dragon
     passage_of_time
     command
   end
-  # Method provides no benefit. Maybe make a happiness/restfull variable go up?
-  # What happens if he becomes too unhappy?
+
   def put_to_bed
     puts "You put #{@name} to bed."
     @asleep = true
@@ -76,7 +77,7 @@ class Dragon
     @happiness += 1
     command
   end
-  # Method provides no benefit. Maybe make a happiness variable go up?
+
   def toss
     puts "You toss #{@name} up into the air."
     puts "He giggles, which singes your eyebrows."
@@ -85,7 +86,6 @@ class Dragon
     command
   end
 
-  # Method provides no benefit. Maybe make a happiness/restfull variable go up?
   def rock
     puts "You rock #{@name} gently."
     @asleep = true
