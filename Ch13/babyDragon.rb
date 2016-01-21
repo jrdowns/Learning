@@ -1,3 +1,5 @@
+require 'curses'
+
 class Dragon
 
   def initialize name
@@ -6,6 +8,52 @@ class Dragon
     @stuff_in_belly = 10 # He's full
     @stuff_in_intestine = 0 # He doesn't need to go
     @happiness = 5
+
+    puts "     .-~-.     "
+    puts "   .'     '.   "
+    puts "  /         \\  "
+    puts " :           : "
+    puts " |           | "
+    puts " :           : "
+    puts "  \\         /  "
+    puts "   `.     .'   "
+    puts "     `~~~`     "
+
+    sleep 1
+
+    Curses.clear
+
+    puts "     .-~-.     "
+    puts "   .'     '.   "
+    puts "  /    _\\_  \\  "
+    puts " :        \\/ ; "
+    puts " |   \\__  /  | "
+    puts " :   /  `Y   : "
+    puts "  \\    .--\\ /  "
+    puts "   `.     .'   "
+    puts "     `~~~`     "
+
+    sleep 1
+
+    puts "                           "
+    puts "  /\\ /\\ /\\ /\\  \\/\\-'^^\\/\\/ "
+    puts " //\\\\(o o)//\\\\  '.     .'  "
+    puts " ||\\/\\_^/\\_/\\|    '-.-'    "
+    puts " : \\_/  `Y--':            "
+    puts "  \\ / \\.--\\ /             "
+    puts "   .  /   .'              "
+    puts "     `~~~`                "
+
+    sleep 1
+
+    puts "               "
+    puts "  /\\ /\\ /\\ /\\  "
+    puts " //\\\\(o o)//\\\\ "
+    puts " ||::/ ^ \\::|| "
+    puts " |||((   ))||| "
+    puts " |'  \\\" \"/  '| "
+    puts "      )I(      "
+    puts "     \"\"`\"\"     "
 
     puts "Your very own dragon, #{@name}, is born!"
     command
@@ -160,7 +208,19 @@ class Dragon
 end
 
 def prompt
-  puts "What would you like to name your dragon?"
+  puts "                ,               ,              "
+  puts "               /\\    )\\__/(    /\\              "
+  puts "              /  \\  (_\\  /_)  /  \\             "
+  puts " ____________/____\\__\\@  @/__/____\\____________"
+  puts "|                    |\\../|                    |"
+  puts "|                     \\VV/                     |"
+  puts "|    Welcome to the Baby Dragon Simulator!     |"
+  puts "|   What would you like to name your dragon?   |"
+  puts "|______________________________________________|"
+  puts "         |   /\\  /     \\\\     \\  /\\   |         "
+  puts "         |  /  \\/       ))     \\/  \\  |         "
+  puts "         |/            //            \\|         "
+  puts "         '             V              '         "
   name = gets.capitalize.chomp
   pets = Dragon.new "#{name}"
 end
