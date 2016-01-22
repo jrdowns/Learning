@@ -173,7 +173,7 @@ class Dragon
     if @stuff_in_belly > 0
       # Move food from belly to intestine.
       @stuff_in_belly = @stuff_in_belly - 1
-      @stuff_in_intestine = @stuff_in_intestine + 2
+      @stuff_in_intestine = @stuff_in_intestine + 1
     else # Our dragon is starving!
       if @asleep
         @asleep = false
