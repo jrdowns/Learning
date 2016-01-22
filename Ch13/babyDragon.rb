@@ -1,4 +1,3 @@
-require 'curses'
 
 class Dragon
 
@@ -8,7 +7,12 @@ class Dragon
     @stuff_in_belly = 10 # He's full
     @stuff_in_intestine = 0 # He doesn't need to go
     @happiness = 5
-
+    hatch_graphic
+    puts "Your very own dragon, #{@name}, is born!"
+    exchange
+  end
+  
+  def hatch_graphic
     puts "     .-~-.     "
     puts "   .'     '.   "
     puts "  /         \\  "
@@ -20,8 +24,6 @@ class Dragon
     puts "     `~~~`     "
 
     sleep 1
-
-    Curses.clear
 
     puts "     .-~-.     "
     puts "   .'     '.   "
@@ -54,17 +56,22 @@ class Dragon
     puts " |'  \\\" \"/  '| "
     puts "      )I(      "
     puts "     \"\"`\"\"     "
-
-    puts "Your very own dragon, #{@name}, is born!"
-    command
   end
 
-  def command
-    action_List = ["feed", "walk", "play", "put to bed", "toss", "rock"]
+  def exchange
+    action = command_prompt
+    command_check(action)
+  end
+  
+  def command_prompt
     puts "\n"
     puts "What would you like to do with your dragon?"
     puts "Enter a command: feed, walk, play, put to bed, toss, or rock"
     action = gets.downcase.chomp
+  end
+  
+  def command_check action
+    action_List = ["feed", "walk", "play", "put to bed", "toss", "rock"]
     puts "\n"
     if action_List.include?(action)
       if action == "feed"
@@ -82,7 +89,7 @@ class Dragon
       end
     else
       puts "OOPS! That is not a valid command!"
-      command
+      exchange
     end
   end
 
@@ -90,21 +97,21 @@ class Dragon
     puts "You feed #{@name}."
     @stuff_in_belly = 10
     passage_of_time
-    command
+    exchange
   end
 
   def walk
     puts "You walk #{@name}."
     @stuff_in_intestine = 0
     passage_of_time
-    command
+    exchange
   end
 
   def play
     puts "You play with #{@name}."
     @happiness += 3
     passage_of_time
-    command
+    exchange
   end
 
   def put_to_bed
@@ -122,7 +129,7 @@ class Dragon
         puts "#{@name} wakes up slowly."
       end
     end
-    command
+    exchange
   end
 
   def toss
@@ -130,7 +137,7 @@ class Dragon
     puts "He giggles, which singes your eyebrows."
     @happiness += 1
     passage_of_time
-    command
+    exchange
   end
 
   def rock
@@ -142,7 +149,7 @@ class Dragon
       @asleep = false
       puts "...but wakes when you stop."
     end
-    command
+    exchange
   end
 
   private
