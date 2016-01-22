@@ -215,6 +215,12 @@ class Dragon
 end
 
 def prompt
+  prompt_graphic
+  name = gets.capitalize.chomp
+  pets = Dragon.new "#{name}"
+end
+
+def prompt_graphic
   puts "                ,               ,              "
   puts "               /\\    )\\__/(    /\\              "
   puts "              /  \\  (_\\  /_)  /  \\             "
@@ -228,8 +234,6 @@ def prompt
   puts "         |  /  \\/       ))     \\/  \\  |         "
   puts "         |/            //            \\|         "
   puts "         '             V              '         "
-  name = gets.capitalize.chomp
-  pets = Dragon.new "#{name}"
 end
 
 prompt
