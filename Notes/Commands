@@ -67,3 +67,4 @@ returns - explicitly tells method what to return
 redo - restarts current iteration
 raise - (without argument) raises runtime exception and program dies.
 .each_char do - iterates through each character in a string
+attr_accessor - research this
