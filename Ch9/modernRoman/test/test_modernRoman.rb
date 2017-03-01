@@ -1,20 +1,21 @@
 require 'minitest/autorun'
 require 'modernRoman'
 
-=begin
-class TestScanner < MiniTest::Unit::Test
-
-    def test_initial_scan
-        s = Scanner.new
-        assert_equal(s.scan, 1, "The initial scan should be 1") 
-    end
-
-end
-=end
-
 # TestModernRoman
 class TestModernRoman < MiniTest::Test
 
+# Create test to make sure input_test works.
+  def test_input
+    input = ModernRoman.new
+    assert_equal(true, input.input_test("1"), "This should have passed true; the input (1) is within bounds.")
+    assert_equal(true, input.input_test("1117"), "This should have passed true; the input (1117) is within bounds.")
+    assert_equal(true, input.input_test("4999"), "This should have passed true; the input (4999) is within bounds")
+    assert_equal(false,input.input_test("0"), "This should have passed false; 0 is out of bounds.")
+    assert_equal(false,input.input_test("5000"), "This should have passed false; 5000 is out of bounds.")
+    assert_equal(false,input.input_test("1a44"), "This should have passed false; 1a44 contains a letter.")
+  end
+
+# Test number to Roman Numeral conversion
   def test_number
     number = ModernRoman.new
     assert_equal("IV",number.convert_to_roman(4), "The Roman Numeral should be IV.")

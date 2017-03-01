@@ -6,7 +6,22 @@ I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000
 
 class ModernRoman
   
-  # Add method to make sure input is a number and not a character?
+  # Get use input
+  def get_input
+    puts "Please, enter a number between 1 and 4999:"
+    input = gets.chomp
+    input_test(input)
+  end
+  
+  # Make sure input only contains numbers between 1 - 4999 & no letters
+  def input_test(input)
+    # This regex doesn't work
+    if input =~ /[a-zA-Z]+/ || input.to_i.between?(1,4999) == false
+      return false
+    else
+      return true
+    end
+  end
   
   def convert_to_roman(num)
     # M = 1000
@@ -62,3 +77,4 @@ class ModernRoman
   
 end
 
+# Add line to call new instance of the class
