@@ -13,10 +13,15 @@ end
 =end
 
 # TestModernRoman
-class TestModernRoman < MiniTest::Unit::Test
+class TestModernRoman < MiniTest::Test
 
   def test_number
-    number = modernRoman.new
-    assert_equal(number.convert_to_roman,5, "The Roman Numeral should be IV.")
+    number = ModernRoman.new
+    assert_equal("IV",number.convert_to_roman(4), "The Roman Numeral should be IV.")
+    assert_equal("XIV",number.convert_to_roman(14), "The Roman Numeral should be XIV.")
+    assert_equal("CDXI",number.convert_to_roman(411), "The Roman Numeral should be CDXI.")
+    assert_equal("MCXVII",number.convert_to_roman(1117), "The Roman Numeral should be MCXVII.")
+    assert_equal("MMMXIV",number.convert_to_roman(4999), "The Roman Numeral should be MMMMCMXCIX.")
   end
+  
 end

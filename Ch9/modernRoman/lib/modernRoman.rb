@@ -4,9 +4,11 @@ so when someone calls roman_numeral 4, it returns IV
 I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000  
 =end
 
-class modernRoman
+class ModernRoman
   
-  def convert_to_roman num
+  # Add method to make sure input is a number and not a character?
+  
+  def convert_to_roman(num)
     # M = 1000
     m_num = (num/1000)
     m = "M" * m_num
