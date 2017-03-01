@@ -1,21 +1,22 @@
-=begin
-Rewrite previous method to return the new-style Roman numerals
-so when someone calls roman_numeral 4, it returns IV  
-I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000  
-=end
+#I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000  
+
 
 class ModernRoman
   
-  # Get use input
-  def get_input
+  def initialize
     puts "Please, enter a number between 1 and 4999:"
     input = gets.chomp
-    input_test(input)
+    if input_test(input) == true
+      num = input.to_i
+      convert_to_roman(num)
+    else
+      puts "Input invalid."
+      initialize
+    end
   end
   
   # Make sure input only contains numbers between 1 - 4999 & no letters
   def input_test(input)
-    # This regex doesn't work
     if input =~ /[a-zA-Z]+/ || input.to_i.between?(1,4999) == false
       return false
     else
@@ -72,9 +73,9 @@ class ModernRoman
   
     roman = m.to_s + c.to_s + x.to_s + i.to_s
   
-    return roman
+    puts roman
   end
   
 end
 
-# Add line to call new instance of the class
+ModernRoman.new
