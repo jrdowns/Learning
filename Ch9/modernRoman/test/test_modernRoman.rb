@@ -21,7 +21,7 @@ class TestModernRoman < MiniTest::Test
     assert_equal("XIV",number.convert_to_roman(14), "The Roman Numeral should be XIV.")
     assert_equal("CDXI",number.convert_to_roman(411), "The Roman Numeral should be CDXI.")
     assert_equal("MCXVII",number.convert_to_roman(1117), "The Roman Numeral should be MCXVII.")
-    assert_equal("MMMXIV",number.convert_to_roman(4999), "The Roman Numeral should be MMMMCMXCIX.")
+    assert_equal("MMMMCMXCIX",number.convert_to_roman(4999), "The Roman Numeral should be MMMMCMXCIX.")
   end
   
 end
