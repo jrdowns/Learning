@@ -1,10 +1,9 @@
 # I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000
-
 class ModernRoman
-  
+
   # Make sure input only contains numbers between 1 - 4999 & no letters
   def input_test(input)
-    if input =~ /[a-zA-Z]+/ || input.to_i.between?(1,4999) == false
+    if input =~ /[a-zA-Z]+/ || input.to_i.between?(1, 4999) == false
       return false
     else
       return true
