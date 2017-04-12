@@ -1,5 +1,16 @@
 # I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000
 class ModernRoman
+  def initialize
+    puts 'Enter a number between 1 - 4999: '
+    num = gets.to_i
+    if input_test(num) == false
+      puts 'That input is not valid.'
+      initialize
+    else
+      puts convert_to_roman(num)
+    end
+  end
+  
   # Make sure input only contains numbers between 1 - 4999 & no letters
   def input_test(input)
     if input =~ /[a-zA-Z]+/ || input.to_i.between?(1, 4999) == false
@@ -55,11 +66,9 @@ class ModernRoman
     else
       i = 'I' * i_num
     end
-
+    
     roman = m.to_s + c.to_s + x.to_s + i.to_s
-
-    # puts roman
   end
 end
 
-# ModernRoman.new
+ModernRoman.new
